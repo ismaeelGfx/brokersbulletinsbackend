@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <meta name="viewport" content="width=device-width">
+
+ <style type="text/css">
+
+ /********************************************** * Ink v1.0.5 - Copyright 2013 ZURB Inc * **********************************************/
+
+ /* Client-specific Styles & Reset */
+
+ #outlook a { padding:0; } 
+
+ body{ width:100% !important; min-width: 100%; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; }
+
+.ExternalClass { width:100%; } 
+
+.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div { line-height: 100%; } 
+
+ #backgroundTable { margin:0; padding:0; width:100% !important; line-height: 100% !important; }
+
+ img { outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; }
+
+ center { width: 100%; }
+
+ a img { border: none; }
+
+ p { margin: 0 0 0 10px; }
+
+ table { border-spacing: 0; border-collapse: collapse; }
+
+ td { word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; }
+
+ table, tr, td { padding: 0; vertical-align: top; text-align: left; }
+
+ hr { color: #d9d9d9; background-color: #d9d9d9; height: 1px; border: none; }
+
+ /* Responsive Grid */
+
+ table.body { height: 100% !important; width: 100% !important; padding: 0; margin: 0; }
+
+ table.container { width: 580px; margin: 0 auto; text-align: inherit; }
+
+ table.row { padding: 0px; width: 100%; position: relative; }
+
+ table.container table.row { display: block; }
+
+ td.wrapper { padding: 10px 20px 0px 0px; position: relative; }
+
+ table.columns, table.column { margin: 0 auto; }
+
+ table.columns td, table.column td { padding: 0px 0px 10px; }
+
+ table.columns td.sub-columns, table.column td.sub-columns, table.columns td.sub-column, table.column td.sub-column { padding-right: 10px; }
+
+ td.sub-column, td.sub-columns { min-width: 0px; }
+
+ table.row td.last, table.container td.last { padding-right: 0px; }
+
+ table.one { width: 30px; } table.two { width: 80px; } table.three { width: 130px; } table.four { width: 180px; } table.five { width: 230px; } table.six { width: 280px; } table.seven { width: 330px; } table.eight { width: 380px; } table.nine { width: 430px; } table.ten { width: 480px; } table.eleven { width: 530px; } table.twelve { width: 580px; }
+
+ table.one center { min-width: 30px; } table.two center { min-width: 80px; } table.three center { min-width: 130px; } table.four center { min-width: 180px; } table.five center { min-width: 230px; } table.six center { min-width: 280px; } table.seven center { min-width: 330px; } table.eight center { min-width: 380px; } table.nine center { min-width: 430px; } table.ten center { min-width: 480px; } table.eleven center { min-width: 530px; } table.twelve center { min-width: 580px; }
+
+ table.one.panel center { min-width: 10px; } table.two.panel center { min-width: 60px; } table.three.panel center { min-width: 110px; } table.four.panel center { min-width: 160px; } table.five.panel center { min-width: 210px; } table.six.panel center { min-width: 260px; } table.seven.panel center { min-width: 310px; } table.eight.panel center { min-width: 360px; } table.nine.panel center { min-width: 410px; } table.ten.panel center { min-width: 460px; } table.eleven.panel center { min-width: 510px; } table.twelve.panel center { min-width: 560px; }
+
+.body.columns td.one,.body.column td.one { width: 8.333333%; }.body.columns td.two,.body.column td.two { width: 16.666666%; }.body.columns td.three,.body.column td.three { width: 25%; }.body.columns td.four,.body.column td.four { width: 33.333333%; }.body.columns td.five,.body.column td.five { width: 41.666666%; }.body.columns td.six,.body.column td.six { width: 50%; }.body.columns td.seven,.body.column td.seven { width: 58.333333%; }.body.columns td.eight,.body.column td.eight { width: 66.666666%; }.body.columns td.nine,.body.column td.nine { width: 75%; }.body.columns td.ten,.body.column td.ten { width: 83.333333%; }.body.columns td.eleven,.body.column td.eleven { width: 91.666666%; }.body.columns td.twelve,.body.column td.twelve { width: 100%; }
+
+ td.offset-by-one { padding-left: 50px; } td.offset-by-two { padding-left: 100px; } td.offset-by-three { padding-left: 150px; } td.offset-by-four { padding-left: 200px; } td.offset-by-five { padding-left: 250px; } td.offset-by-six { padding-left: 300px; } td.offset-by-seven { padding-left: 350px; } td.offset-by-eight { padding-left: 400px; } td.offset-by-nine { padding-left: 450px; } td.offset-by-ten { padding-left: 500px; } td.offset-by-eleven { padding-left: 550px; }
+
+ td.expander { visibility: hidden; width: 0px; padding: 0 !important; }
+
+ table.columns.text-pad, table.column.text-pad { padding-left: 10px; padding-right: 10px; }
+
+ table.columns.left-text-pad, table.columns.text-pad-left, table.column.left-text-pad, table.column.text-pad-left { padding-left: 10px; }
+
+ table.columns.right-text-pad, table.columns.text-pad-right, table.column.right-text-pad, table.column.text-pad-right { padding-right: 10px; }
+
+ /* Block Grid */
+
+.block-grid { width: 100%; max-width: 580px; }
+
+.block-grid td { display: inline-block; padding:10px; }
+
+.two-up td { width:270px; }
+
+.three-up td { width:173px; }
+
+.four-up td { width:125px; }
+
+.five-up td { width:96px; }
+
+.six-up td { width:76px; }
+
+.seven-up td { width:62px; }
+
+.eight-up td { width:52px; }
+
+ /* Alignment & Visibility Classes */
+
+ table.center, td.center { text-align: center; }
+
+ h1.center, h2.center, h3.center, h4.center, h5.center, h6.center { text-align: center; }
+
+ span.center { display: block; width: 100%; text-align: center; }
+
+ img.center { margin: 0 auto; float: none; }
+
+.show-for-small,.hide-for-desktop { display: none; }
+
+ /* Typography */
+
+ body, table.body, h1, h2, h3, h4, h5, h6, p, td { color: #172B4D; font-family: "Helvetica", "Arial", sans-serif; font-weight: normal; padding: 0; margin: 0; text-align: left; line-height: 1.3; }
+
+ h1, h2, h3, h4, h5, h6 { word-break: normal; margin-bottom: 12px; }
+
+ h1 {font-size: 40px;} h2 {font-size: 36px;} h3 {font-size: 32px;} h4 {font-size: 28px;} h5 {font-size: 24px;} h6 {font-size: 20px;} body, table.body, p, td {font-size: 14px;line-height:19px;}
+
+ p.lead, p.lede, p.leed { font-size: 18px; line-height:21px; }
+
+ p { margin-bottom: 10px; }
+
+ small { font-size: 10px; }
+
+ a { color: #0079BF; text-decoration: underline; }
+
+ a:active { color: #265F80; }
+
+ a:visited { color: #0079BF; }
+
+ a:hover { color: #265F80; }
+
+ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #0079BF; }
+
+ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { color: #0079BF !important; } 
+
+ h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color: #0079BF !important; } 
+
+ /* Panels */
+
+.panel { background: #f2f2f2; border: 1px solid #d9d9d9; padding: 10px !important; }
+
+.sub-grid table { width: 100%; }
+
+.sub-grid td.sub-columns { padding-bottom: 0; }
+
+ /* Buttons */
+
+ table.button, table.tiny-button, table.small-button, table.medium-button, table.large-button { width: 100%; overflow: hidden; }
+
+ table.button td, table.tiny-button td, table.small-button td, table.medium-button td, table.large-button td { display: block; width: auto !important; text-align: center; background: #2ba6cb; border: 1px solid #2284a1; color: #ffffff; padding: 8px 0; }
+
+ table.tiny-button td { padding: 5px 0 4px; }
+
+ table.small-button td { padding: 8px 0 7px; }
+
+ table.medium-button td { padding: 12px 0 10px; }
+
+ table.large-button td { padding: 21px 0 18px; }
+
+ table.button td a, table.tiny-button td a, table.small-button td a, table.medium-button td a, table.large-button td a { font-weight: bold; text-decoration: none; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px; }
+
+ table.tiny-button td a { font-size: 12px; font-weight: normal; }
+
+ table.small-button td a { font-size: 16px; }
+
+ table.medium-button td a { font-size: 20px; }
+
+ table.large-button td a { font-size: 24px; }
+
+ table.button:hover td, table.button:visited td, table.button:active td { background: #2795b6 !important; }
+
+ table.button:hover td a, table.button:visited td a, table.button:active td a { color: #fff !important; }
+
+ table.button:hover td, table.tiny-button:hover td, table.small-button:hover td, table.medium-button:hover td, table.large-button:hover td { background: #2795b6 !important; }
+
+ table.button:hover td a, table.button:active td a, table.button td a:visited, table.tiny-button:hover td a, table.tiny-button:active td a, table.tiny-button td a:visited, table.small-button:hover td a, table.small-button:active td a, table.small-button td a:visited, table.medium-button:hover td a, table.medium-button:active td a, table.medium-button td a:visited, table.large-button:hover td a, table.large-button:active td a, table.large-button td a:visited { color: #ffffff !important; }
+
+ table.secondary td { background: #e9e9e9; border-color: #d0d0d0; color: #555; }
+
+ table.secondary td a { color: #555; }
+
+ table.secondary:hover td { background: #d0d0d0 !important; color: #555; }
+
+ table.secondary:hover td a, table.secondary td a:visited, table.secondary:active td a { color: #555 !important; }
+
+ table.success td { background: #5da423; border-color: #457a1a; }
+
+ table.success:hover td { background: #457a1a !important; }
+
+ table.alert td { background: #c60f13; border-color: #970b0e; }
+
+ table.alert:hover td { background: #970b0e !important; }
+
+ table.radius td { -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+
+ table.round td { -webkit-border-radius: 500px; -moz-border-radius: 500px; border-radius: 500px; }
+
+ /* Outlook First */
+
+ body.outlook p { display: inline !important; }
+
+ /* Media Queries */
+
+ @media only screen and (max-width: 600px) {
+
+ table[class="body"] img { width: auto; height: auto; }
+
+ table[class="body"] center { min-width: 0 !important; }
+
+ table[class="body"].container { width: 95% !important; }
+
+ table[class="body"].row { width: 100% !important; display: block !important; }
+
+ table[class="body"].wrapper { display: block !important; padding-right: 0 !important; }
+
+ table[class="body"].columns, table[class="body"].column { table-layout: fixed !important; float: none !important; width: 100% !important; padding-right: 0px !important; padding-left: 0px !important; display: block !important; }
+
+ table[class="body"].wrapper.first.columns, table[class="body"].wrapper.first.column { display: table !important; }
+
+ table[class="body"] table.columns td, table[class="body"] table.column td { width: 100% !important; }
+
+ table[class="body"].columns td.one, table[class="body"].column td.one { width: 8.333333% !important; } table[class="body"].columns td.two, table[class="body"].column td.two { width: 16.666666% !important; } table[class="body"].columns td.three, table[class="body"].column td.three { width: 25% !important; } table[class="body"].columns td.four, table[class="body"].column td.four { width: 33.333333% !important; } table[class="body"].columns td.five, table[class="body"].column td.five { width: 41.666666% !important; } table[class="body"].columns td.six, table[class="body"].column td.six { width: 50% !important; } table[class="body"].columns td.seven, table[class="body"].column td.seven { width: 58.333333% !important; } table[class="body"].columns td.eight, table[class="body"].column td.eight { width: 66.666666% !important; } table[class="body"].columns td.nine, table[class="body"].column td.nine { width: 75% !important; } table[class="body"].columns td.ten, table[class="body"].column td.ten { width: 83.333333% !important; } table[class="body"].columns td.eleven, table[class="body"].column td.eleven { width: 91.666666% !important; } table[class="body"].columns td.twelve, table[class="body"].column td.twelve { width: 100% !important; }
+
+ table[class="body"] td.offset-by-one, table[class="body"] td.offset-by-two, table[class="body"] td.offset-by-three, table[class="body"] td.offset-by-four, table[class="body"] td.offset-by-five, table[class="body"] td.offset-by-six, table[class="body"] td.offset-by-seven, table[class="body"] td.offset-by-eight, table[class="body"] td.offset-by-nine, table[class="body"] td.offset-by-ten, table[class="body"] td.offset-by-eleven { padding-left: 0 !important; }
+
+ table[class="body"] table.columns td.expander { width: 1px !important; }
+
+ table[class="body"].right-text-pad, table[class="body"].text-pad-right { padding-left: 10px !important; }
+
+ table[class="body"].left-text-pad, table[class="body"].text-pad-left { padding-right: 10px !important; }
+
+ table[class="body"].hide-for-small, table[class="body"].show-for-desktop { display: none !important; }
+
+ table[class="body"].show-for-small, table[class="body"].hide-for-desktop { display: inherit !important; } }
+
+</style>
+
+ <style type="text/css"> /* Typography */
+
+ body, table.body, h1, h2, h3, h4, h5, h6, p, td, a { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; }
+
+ /* Trello Block */
+
+.trello-block { width: 100%; text-align: inherit; }
+
+.trello-block-single-column { display: block; margin: 0 auto; max-width: 580px; padding: 12px 16px; }
+
+ /* Header */
+
+.header-logo-image { height: 25px; max-height: 25px; max-width: 122px; width: 122px; display: block; }
+
+ /* Blog Post Link */
+
+.trello-block--blog-post p { text-align: center; }
+
+ /* Code */
+
+ code { white-space: pre-wrap; }
+
+ /* Footer */
+
+.trello-block--footer p { color: #9B9B9B; text-align: center; }
+
+.trello-block--footer a,.trello-block--footer a:visited,.trello-block--footer a:active { color: #9B9B9B; text-decoration: underline; }
+
+.trello-block--footer a:hover { color: #4d4d4d; }
+
+ /* Notifications */
+
+.notifications--footer p { color: #626F86; font-size: 11px; }
+
+.notifications--footer.separator { background: #DFE1E6; height: 2px; margin-top: 0; margin-bottom: 26px; }
+
+.phenom { margin: 12px 0; float: left; clear: both; } 
+
+.phenom-creator { width: 38px; }
+
+.phenom-creator-avatar { -webkit-border-radius: 50%; border-radius: 50%; height: 30px; width: 30px; }
+
+.phenom-member-initials { -webkit-border-radius: 50%; border-radius: 50%; display: block; font-size: 12px; font-weight: bold; height: 30px; line-height: 30px; width: 85%; text-align: center; background-color: #d6dadc; }
+
+.app-creator { font-size: 12px; line-height: 16px; color: #5E6C84; display: inline-block; }
+
+.app-creator a { color: inherit; text-decoration: none; }
+
+.app-creator a:hover { text-decoration: underline; }
+
+.app-creator img { width: 14px; height: 14px; margin-right: 1px; vertical-align: middle !important; display: inline-block; float: none; }
+
+.phenom-details { /* max-width: 480px; */ }
+
+.phenom-details-comment { background-color: #fff; border: 1px solid #C1C7D0; -webkit-border-radius: 3px; border-radius: 3px; display: block; margin: 6px 0; padding: 10px 12px 0 12px; }
+
+ /* Button */
+
+ a.button { background: linear-gradient(to bottom, #3FBF3F 0%, #37A637 100%); border-bottom: 2px solid #008000; border-radius: 3px; color: #fff; display: inline-block; font-weight: bold; font-size: 18px; margin: 12px margin; padding: 16px 24px; text-decoration: none; }
+
+ a.button:hover { background: linear-gradient(to bottom, #37A637 0%, #2E8C2E 100%); }
+
+ /* Responsivication */
+
+ @media only screen and (min-width: 580px) {
+
+.trello-block-single-column { width: 560px !important; }
+
+ }
+
+ @media only screen and (max-width: 559px) {
+
+.trello-block-single-column { width: 90% !important; padding: 12px 0; }
+
+ }
+
+ @media screen and (max-width:480px) {.desktop-marketing { display: none !important }.mobile-marketing { display: block !important } }
+
+ /* Temporary Settings Banner */.settings-banner { background: #FCFAE7; border: 1px solid #F5DD29; border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; padding: 20px 20px 8px 20px; margin-bottom: 30px; }
+
+.manage-settings-link { text-decoration: none; }
+
+.manage-settings-link:hover { text-decoration: underline; }
+
+.manage-settings-link:focus { text-decoration: underline; } </style>
+
+ </head> <body style="min-width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #172B4D; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; width: 100%;">
+
+ <table class="body" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; color: #172B4D; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; height: 100%; width: 100%;" width="100%" height="100%" valign="top" align="left"> <tr style="padding: 0; vertical-align: top; text-align: left;" valign="top" align="left"> <td class="center" align="center" valign="top" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #172B4D; font-weight: normal; padding: 0; margin: 0; font-size: 14px; line-height: 19px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; text-align: center; border-collapse: collapse;"> <center style="width: 100%;"> <!-- Email Content -->
+
+ <!--[if (gte mso 9)|(IE)]> <table width="560" align="center"> <tr> <td> <![endif]-->
+
+ <!-- Header -->
+
+<table class="trello-block trello-block-background--trello-blue" style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; width: 100%; text-align: inherit;" width="100%" valign="top" align="inherit"> <tr style="padding: 0; vertical-align: top; text-align: left;" valign="top" align="left"> <td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #172B4D; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; border-collapse: collapse;" valign="top" align="left">
+
+ <div class="trello-block-single-column center" style="display: block; margin: 0 auto; max-width: 580px; padding: 12px 16px;">
+
+ <img class="header-logo-image center" height="25" width="122" src="https://trello.com/images/logo-new-sm-2x.png" alt="Trello Logo" title="Trello Logo" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; height: 25px; max-height: 25px; max-width: 122px; width: 122px; display: block; margin: 0 auto; float: none;">
+
+ </div>
+
+ </td> </tr> </table>
+
+ <table class="trello-block" style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; width: 100%; text-align: inherit;" width="100%" valign="top" align="inherit"> <tr style="padding: 0; vertical-align: top; text-align: left;" valign="top" align="left"> <td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #172B4D; font-weight: normal; margin: 0; text-align: left; font-size: 14px; line-height: 19px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; padding: 16px 0; border-collapse: collapse;" valign="top" align="left">
+
+ <div class="trello-block-single-column" style="display: block; margin: 0 auto; max-width: 580px; padding: 12px 16px;">
+
+ <h6 style="color: #172B4D; font-weight: normal; padding: 0; margin: 0; text-align: left; line-height: 1.3; word-break: normal; margin-bottom: 12px; font-size: 20px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;">Here’s the latest…</h6>
+
+ <table width="100%" class="phenom" style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; margin: 12px 0; float: left; clear: both;" valign="top" align="left"> <tr style="padding: 0; vertical-align: top; text-align: left;" valign="top" align="left">
+
+ <td class="phenom-creator" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #172B4D; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; width: 38px; border-collapse: collapse;" width="38" valign="top" align="left"> <img class="phenom-creator-avatar" src="https://trello-members.s3.amazonaws.com/658d707f53bdf0b2e093ebc6/8f3361af9be9d50535063556a3b6504a/30.png" height="30" width="30" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100%; -webkit-border-radius: 50%; border-radius: 50%; height: 30px; width: 30px;">
+
+ </td> <td class="phenom-details" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #172B4D; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; border-collapse: collapse;" valign="top" align="left"> <strong>Shahzad Raza</strong> commented on the card <a href="https://trello.com/c/Xfdpc4Uv/7-allouch-full-stack-influencer-platform-farhan" style="color: #0079BF; text-decoration: underline; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;">Allouch | Full Stack| Influencer Platform | Farhan</a> on <a href="https://trello.com/b/mBrmPo0x/brandrevamp-merns" style="color: #0079BF; text-decoration: underline; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;">BrandReVamp MERN&#39;s</a> <span class="app-creator" style="font-size: 12px; line-height: 16px; color: #5E6C84; display: inline-block;"> </span> <div class="phenom-details-comment" style="background-color: #fff; border: 1px solid #C1C7D0; -webkit-border-radius: 3px; border-radius: 3px; display: block; margin: 6px 0; padding: 10px 12px 0 12px;"> <p><span class="atMention" title="nazarnasim">@nazarnasim</span> <span class="atMention" title="usamasaleem29">@usamasaleem29</span> <span class="atMention" title="muhammadjunaidbhuj1">@muhammadjunaidbhuj1</span></p> <p><strong>Hostinger credentials</strong><br><a href="mailto:allouchhaitam2004@gmail.com" title="‌" target="_blank" rel="noreferrer ugc nofollow"><a href="mailto:allouchhaitam2004@gmail.com">allouchhaitam2004@gmail.com</a></a><br>Haitamallouch123.</p>
+
+ </div> <p style="color: #172B4D; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19px; margin-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;"> <a href="mailto:talhadevelope+31zmlnzmjs16tolzpn0+31l346yhzfh597hq8zu+1l5mwrewwt@boards.trello.com?subject=Re%3A%20Allouch%20%7C%20Full%20Stack%7C%20Influencer%20Platform%20%7C%20Farhan" target="_blank" style="color: #0079BF; text-decoration: underline; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;">Reply via email</a> </p> </td>
+
+ </tr> </table>
+
+ </div>
+
+ </td> </tr> </table> <!-- End gray background -->
+
+ <script type="application/ld+json"> {"@context":"http:\u002f\u002fschema.org","@type":"EmailMessage","potentialAction":{"@type":"ViewAction","target":"https:\u002f\u002ftrello.com\u002fc\u002fXfdpc4Uv?utm_medium=email&utm_source=notification&utm_campaign=notification&utm_content=google_inbox","name":"Open Card in Trello"},"description":"Trello Board"} </script>
+
+ <!-- Footer --> <table class="trello-block trello-block--footer notifications--footer" style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; width: 100%; text-align: inherit;" width="100%" valign="top" align="inherit"> <tr style="padding: 0; vertical-align: top; text-align: left;" valign="top" align="left"> <td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #172B4D; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; border-collapse: collapse;" valign="top" align="left"> <div class="trello-block-single-column center" style="display: block; margin: 0 auto; max-width: 580px; padding: 12px 16px; padding-top: 0px;"> <hr class="separator" style="color: #d9d9d9; background-color: #d9d9d9; border: none; background: #DFE1E6; height: 2px; margin-top: 0; margin-bottom: 26px;">
+
+ <div class="footer-content"> <p style="font-weight: normal; padding: 0; margin: 0; line-height: 19px; margin-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; text-align: center; color: #626F86; font-size: 11px;"><a href="https://blog.trello.com/collaboration?utm_source=alert-email&utm_medium=email&utm_campaign=trello-collaboration_resource" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; color: #9B9B9B; text-decoration: underline;">👀 Check out our top resources for team collaboration.</a></p> <p style="font-weight: normal; padding: 0; margin: 0; line-height: 19px; margin-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; text-align: center; color: #626F86; font-size: 11px;"><a href="https://trello.com/my/account#email-notifications">Update your settings</a> to customize the notifications you receive and their frequency.</p> </div> <p style="font-weight: normal; padding: 0; margin: 0; line-height: 19px; margin-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; text-align: center; color: #626F86; font-size: 11px;">Stay notified and comment on the go with the Trello mobile app:</p> <div style="text-align: center"> <a href="https://apps.apple.com/us/app/trello-organize-anything/id461504587?itsct=apps_box&itscg=30200" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; color: #9B9B9B; text-decoration: underline; margin: auto; display: inline-block; overflow: hidden; border-radius: 13px; width: 116px; height: 45px; vertical-align: middle; padding: 0px 13px;"> <img width="116" height="45" alt="Download on the Apple Store" src="https://trello.com/images/email/apple-app-store-badges/black-en-us.png" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100%; border: none; border-radius: 13px; width: 116px; height: 45px;"> </a> <a href="https://play.google.com/store/apps/details?id=com.trello&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; color: #9B9B9B; text-decoration: underline; margin: auto; display: inline-block; overflow: hidden; width: 142px; height: 55px; vertical-align: middle;"> <img width="142" height="55" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100%; border: none; width: 142px; height: 55px;"> </a> <p style="font-weight: normal; padding: 0; margin: 0; margin-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; text-align: center; color: #626F86; margin-top: 20px; font-size: 10px; line-height: 12px;"> Google Play and the Google Play logo are trademarks of Google LLC. <br> Apple and the Apple Logo are trademarks of Apple Inc. </p> </div> <p class="footer-links" style="font-weight: normal; padding: 0; margin: 0; line-height: 19px; margin-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; text-align: center; color: #626F86; font-size: 11px; margin-top: 20px;">This email was sent by Trello • <a href="https://www.trello.com/contact" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; color: #9B9B9B; text-decoration: underline;">Give feedback</a> • <a href="https://www.atlassian.com/legal/privacy-policy" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif; color: #9B9B9B; text-decoration: underline;">Privacy policy</a></p> </div> </td> </tr> </table> <!-- End Footer -->
+
+ <!--[if (gte mso 9)|(IE)]> </td> </tr> </table> <![endif]-->
+
+ <!-- / Email Content --> </center> </td> </tr> </table> 
+<img border="0" width="1" height="1" alt="" src="https://atlas-trk.prd.msg.ss-inf.net/q/pKyQX9HDsMwhy6HyqfwJig~~/AAAAAQA~/RgRn8tYoPlcLYXRsYXNzaWFudXNCCmYGKFEQZhRGJwFSGXRhbGhhZGV2ZWxvcGVyN0BnbWFpbC5jb21YBAAAAAA~">
+</body> </html>
